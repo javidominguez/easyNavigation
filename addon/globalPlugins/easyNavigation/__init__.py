@@ -62,7 +62,7 @@ class EasyNavigationRing():
 		return self.ring[index]
 
 	def getNames(self):
-		return [item.name for item in self.ring]
+		return [_(item.name) for item in self.ring]
 
 	def getEnabledItems(self):
 		enabled = []
@@ -167,7 +167,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		while easyNavigationRing.getItem(ringIndex).status == False and ringIndex != self.ringIndex:
 			ringIndex = ringIndex +1 if ringIndex+1 < easyNavigationRing.itemsCount else 0
 		self.ringIndex = ringIndex
-		ui.message(easyNavigationRing.getItem(self.ringIndex).name)
+		ui.message(_(easyNavigationRing.getItem(self.ringIndex).name))
 
 	def script_easyNavigationRingPreviousOption(self, gesture):
 		global easyNavigationRing 
@@ -175,7 +175,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		while easyNavigationRing.getItem(ringIndex).status == False and ringIndex != self.ringIndex:
 			ringIndex = ringIndex -1 if ringIndex > 0 else easyNavigationRing.itemsCount-1
 		self.ringIndex = ringIndex
-		ui.message(easyNavigationRing.getItem(self.ringIndex).name)
+		ui.message(_(easyNavigationRing.getItem(self.ringIndex).name))
 
 	def script_easyNavigationNextItem(self, gesture):
 		global easyNavigationRing 
@@ -188,7 +188,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		scriptHandler.executeScript(getattr(treeInterceptor, easyNavigationRing.getItem(self.ringIndex).previous), gesture)
 
 class EasyNavigationPanel(SettingsPanel):
-	title = _("Easy Navigator")
+	title = _("Easy Navigation")
 
 	def makeSettings(self, settingsSizer):
 		global easyNavigationRing 

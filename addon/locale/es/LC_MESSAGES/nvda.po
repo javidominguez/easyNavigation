@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-13 19:26+0200\n"
+"PO-Revision-Date: 2020-05-13 20:15+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es\n"
+
+#: __init__.py:35 __init__.py:74
+msgid "Lines"
+msgstr "Líneas"
+
+#: __init__.py:36
+msgid "Headings"
+msgstr "Encabezados"
+
+#: __init__.py:37
+msgid "Links"
+msgstr "Enlaces"
+
+#: __init__.py:38
+msgid "Unvisited links"
+msgstr "Enlaces sin visitar"
+
+#: __init__.py:39
+msgid "Visited links"
+msgstr "Enlaces visitados"
+
+#: __init__.py:40
+msgid "Form fields"
+msgstr "Campos de formulario"
+
+#: __init__.py:41
+msgid "Buttons"
+msgstr "Botones"
+
+#: __init__.py:42
+msgid "Edit fields"
+msgstr "Campos de edición"
+
+#: __init__.py:43
+msgid "Check boxes"
+msgstr "Casillas de verificación"
+
+#: __init__.py:44
+msgid "Combo boxes"
+msgstr "Cuadros combinados"
+
+#: __init__.py:45
+msgid "Radio buttons"
+msgstr "Botones de opción"
+
+#: __init__.py:46
+msgid "Images"
+msgstr "Imágenes"
+
+#: __init__.py:47
+msgid "Lists"
+msgstr "Listas"
+
+#: __init__.py:48
+msgid "List items"
+msgstr "Elementos de lista"
+
+#: __init__.py:49
+msgid "Tables"
+msgstr "Tablas"
+
+#: __init__.py:50
+msgid "Frames"
+msgstr "Marcos"
+
+#: __init__.py:51
+msgid "Articles"
+msgstr "Artículos"
+
+#: __init__.py:52
+msgid "Landmarks"
+msgstr "Regiones"
+
+#: __init__.py:53
+msgid "Separators"
+msgstr "Separadores"
+
+#: __init__.py:54
+msgid "Quotes"
+msgstr "Citas"
+
+#: __init__.py:55
+msgid "Objects"
+msgstr "Objetos"
+
+#: __init__.py:56
+msgid "text blocks"
+msgstr "Bloques de texto"
+
+#: __init__.py:57
+msgid "Searches"
+msgstr "Búsquedas"
+
+#: __init__.py:108 __init__.py:191
+msgid "Easy Navigation"
+msgstr "Navegación Fácil"
+
+#: __init__.py:144
+msgid "Toggles easy navigation mode."
+msgstr "Alterna el modo de navegación fácil."
+
+#: __init__.py:197
+msgid "Default active"
+msgstr "Activo por defecto"
+
+#: __init__.py:200
+msgid "Select items:"
+msgstr "Selecciona elementos"
