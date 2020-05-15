@@ -67,13 +67,13 @@ class EasyNavigationRing():
 	def getEnabledItems(self):
 		enabled = []
 		for item in self.ring:
-			if item.status: enabled.append(item.name)
+			if item.status: enabled.append(_(item.name))
 		return enabled
 
 	def setEnabledItems(self, names=[]):
 		newRing = [RingItem(True, _("Lines"), "script_moveByLine_back", "script_moveByLine_forward")]
 		for item in self.ring[1:]:
-			status = True if item.name in names else False
+			status = True if _(item.name) in names else False
 			newRing.append(RingItem(status, item.name, item.previous, item.next))
 		self.ring = newRing
 

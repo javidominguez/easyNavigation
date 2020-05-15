@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-13 19:26+0200\n"
+"PO-Revision-Date: 2020-05-14 23:28+0800\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: 蔡宗豪 <surfer0627@gmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: zh_TW\n"
+
+#: __init__.py:35 __init__.py:74
+msgid "Lines"
+msgstr "每行"
+
+#: __init__.py:36
+msgid "Headings"
+msgstr "標題"
+
+#: __init__.py:37
+msgid "Links"
+msgstr "連結"
+
+#: __init__.py:38
+msgid "Unvisited links"
+msgstr "未到訪過的連結"
+
+#: __init__.py:39
+msgid "Visited links"
+msgstr "已到訪過的連結"
+
+#: __init__.py:40
+msgid "Form fields"
+msgstr "表單區"
+
+#: __init__.py:41
+msgid "Buttons"
+msgstr "按鈕"
+
+#: __init__.py:42
+msgid "Edit fields"
+msgstr "編輯區"
+
+#: __init__.py:43
+msgid "Check boxes"
+msgstr "核取方塊"
+
+#: __init__.py:44
+msgid "Combo boxes"
+msgstr "夏拉方塊"
+
+#: __init__.py:45
+msgid "Radio buttons"
+msgstr "單選鈕"
+
+#: __init__.py:46
+msgid "Images"
+msgstr "圖片"
+
+#: __init__.py:47
+msgid "Lists"
+msgstr "清單"
+
+#: __init__.py:48
+msgid "List items"
+msgstr "清單項目"
+
+#: __init__.py:49
+msgid "Tables"
+msgstr "表格"
+
+#: __init__.py:50
+msgid "Frames"
+msgstr "頁框"
+
+#: __init__.py:51
+msgid "Articles"
+msgstr "文章"
+
+#: __init__.py:52
+msgid "Landmarks"
+msgstr "地標"
+
+#: __init__.py:53
+msgid "Separators"
+msgstr "隔線"
+
+#: __init__.py:54
+msgid "Quotes"
+msgstr "引述"
+
+#: __init__.py:55
+msgid "Objects"
+msgstr "嵌入式物件"
+
+#: __init__.py:56
+msgid "text blocks"
+msgstr "文字區塊"
+
+#: __init__.py:57
+msgid "Searches"
+msgstr "搜尋"
+
+#: __init__.py:108 __init__.py:191
+msgid "Easy Navigation"
+msgstr "Easy Navigation"
+
+#: __init__.py:144
+msgid "Toggles easy navigation mode."
+msgstr "開關 easy navigation"
+
+#: __init__.py:197
+msgid "Default active"
+msgstr "預設動作"
+
+#: __init__.py:200
+msgid "Select items:"
+msgstr "選取的項目"
