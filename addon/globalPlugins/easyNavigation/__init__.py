@@ -66,7 +66,7 @@ class EasyNavigationRing():
 
 	def getEnabledItems(self):
 		enabled = []
-		for item in self.ring:
+		for item in self.ring[1:]:
 			if item.status: enabled.append(_(item.name))
 		return enabled
 
