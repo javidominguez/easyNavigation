@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Navegação Fácil\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-13 19:26+0200\n"
+"PO-Revision-Date: 2020-05-13 21:56+0100\n"
+"Language-Team: Equipa portuguesa do NVDA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.1\n"
+"Last-Translator: Ângelo Miguel Abrantes <ampa4374@gmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: pt_PT\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: __init__.py:35 __init__.py:74
+msgid "Lines"
+msgstr "Linhas"
+
+#: __init__.py:36
+msgid "Headings"
+msgstr "Títulos"
+
+#: __init__.py:37
+msgid "Links"
+msgstr "Ligações"
+
+#: __init__.py:38
+msgid "Unvisited links"
+msgstr "Ligações não visitadas"
+
+#: __init__.py:39
+msgid "Visited links"
+msgstr "Ligações visitadas"
+
+#: __init__.py:40
+msgid "Form fields"
+msgstr "Campos de formulário"
+
+#: __init__.py:41
+msgid "Buttons"
+msgstr "Botões"
+
+#: __init__.py:42
+msgid "Edit fields"
+msgstr "Campos de edição"
+
+#: __init__.py:43
+msgid "Check boxes"
+msgstr "Caixas de verificação"
+
+#: __init__.py:44
+msgid "Combo boxes"
+msgstr "Caixas combinadas"
+
+#: __init__.py:45
+msgid "Radio buttons"
+msgstr "Botões de rádio"
+
+#: __init__.py:46
+msgid "Images"
+msgstr "Imagens"
+
+#: __init__.py:47
+msgid "Lists"
+msgstr "Listas"
+
+#: __init__.py:48
+msgid "List items"
+msgstr "itens de lista"
+
+#: __init__.py:49
+msgid "Tables"
+msgstr "Tabelas"
+
+#: __init__.py:50
+msgid "Frames"
+msgstr "Frames"
+
+#: __init__.py:51
+msgid "Articles"
+msgstr "Artigos"
+
+#: __init__.py:52
+msgid "Landmarks"
+msgstr "Regiões"
+
+#: __init__.py:53
+msgid "Separators"
+msgstr "Separadores"
+
+#: __init__.py:54
+msgid "Quotes"
+msgstr "Citações"
+
+#: __init__.py:55
+msgid "Objects"
+msgstr "Objectos"
+
+#: __init__.py:56
+msgid "text blocks"
+msgstr "Blocos de texto"
+
+#: __init__.py:57
+msgid "Searches"
+msgstr "Pesquisas"
+
+#: __init__.py:108 __init__.py:191
+msgid "Easy Navigation"
+msgstr "Navegação Fácil"
+
+#: __init__.py:144
+msgid "Toggles easy navigation mode."
+msgstr "Alterna o modo de navegação fácil."
+
+#: __init__.py:197
+msgid "Default active"
+msgstr "Activo por padrão"
+
+#: __init__.py:200
+msgid "Select items:"
+msgstr "Seleccionar itens"
