@@ -25,8 +25,8 @@ import tones
 import ui
 import wx
 
-RingItem = collections.namedtuple("easyNavigationRingItem", ("status", "name", "previous", "next"))
-NavKeys = collections.namedtuple("NavigationKeys", ("nextOption", "previousOption", "nextItem", "previousItem"))
+RingItem = collections.namedtuple("RingItem", ("status", "name", "previous", "next"))
+NavKeys = collections.namedtuple("NavKeys", ("nextOption", "previousOption", "nextItem", "previousItem"))
 
 class EasyNavigationRing():
 
@@ -80,29 +80,19 @@ class EasyNavigationRing():
 		self.ring = newRing
 
 	def save(self):
-		ring = [(i.status, i.name, i.previous, i.next) for i in self.ring]
 		try:
 			with open(os.path.join(globalVars.appArgs.configPath, "easyNavigation.pickle"), "wb") as f:
-				pickle.dump((ring, self.defaultActive, list(self.navKeys)), f, 0)
+				pickle.dump((self.ring, self.defaultActive, self.navKeys), f, 0)
 		except IOError:
 			pass
 
 	def load(self):
 		try:
 			with open(os.path.join(globalVars.appArgs.configPath, "easyNavigation.pickle"), "rb") as f:
-				ring, self.defaultActive, navKeys = pickle.load(f)
+				self.ring, self.defaultActive, self.navKeys = pickle.load(f)
 		except (IOError, EOFError, NameError, ValueError, pickle.UnpicklingError):
 			return False
 		else:
-			try:
-				a, b, c, d = navKeys
-				self.navKeys = NavKeys(a, b, c, d)
-			except:
-				return False
-			self.ring = []
-			for item in ring:
-				status, name, previous, next = item
-				self.ring.append(RingItem(status, name, previous, next))
 			self.itemsCount = len(self.ring)
 			return True
 
