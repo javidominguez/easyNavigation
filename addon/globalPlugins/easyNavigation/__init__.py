@@ -26,6 +26,7 @@ import ui
 import wx
 
 RingItem = collections.namedtuple("easyNavigationRingItem", ("status", "name", "previous", "next"))
+NavKeys = collections.namedtuple("NavigationKeys", ("nextOption", "previousOption", "nextItem", "previousItem"))
 
 class EasyNavigationRing():
 
@@ -57,6 +58,7 @@ class EasyNavigationRing():
 		RingItem(True, _("Searches"), "script_findPrevious", "script_findNext")]
 		self.itemsCount = len(self.ring)
 		self.defaultActive = False
+		self.navKeys = NavKeys("kb:rightArrow", "kb:leftArrow", "kb:downArrow", "kb:upArrow")
 
 	def getItem(self, index=0):
 		return self.ring[index]
@@ -81,17 +83,22 @@ class EasyNavigationRing():
 		ring = [(i.status, i.name, i.previous, i.next) for i in self.ring]
 		try:
 			with open(os.path.join(globalVars.appArgs.configPath, "easyNavigation.pickle"), "wb") as f:
-				pickle.dump((ring, self.defaultActive), f, 0)
+				pickle.dump((ring, self.defaultActive, list(self.navKeys)), f, 0)
 		except IOError:
 			pass
 
 	def load(self):
 		try:
 			with open(os.path.join(globalVars.appArgs.configPath, "easyNavigation.pickle"), "rb") as f:
-				ring, self.defaultActive = pickle.load(f)
+				ring, self.defaultActive, navKeys = pickle.load(f)
 		except (IOError, EOFError, NameError, ValueError, pickle.UnpicklingError):
 			return False
 		else:
+			try:
+				a, b, c, d = navKeys
+				self.navKeys = NavKeys(a, b, c, d)
+			except:
+				return False
 			self.ring = []
 			for item in ring:
 				status, name, previous, next = item
@@ -145,17 +152,15 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def enableEasyNavigation(self):
 		self.flagEasyNavigation = True
-		self.bindGesture("kb:rightArrow", "easyNavigationRingNextOption")
-		self.bindGesture("kb:leftArrow", "easyNavigationRingPreviousOption")
-		self.bindGesture("kb:downArrow", "easyNavigationNextItem")
-		self.bindGesture("kb:upArrow", "easyNavigationPreviousItem")
+		self.bindGesture(easyNavigationRing.navKeys.nextOption, "easyNavigationRingNextOption")
+		self.bindGesture(easyNavigationRing.navKeys.previousOption, "easyNavigationRingPreviousOption")
+		self.bindGesture(easyNavigationRing.navKeys.nextItem, "easyNavigationNextItem")
+		self.bindGesture(easyNavigationRing.navKeys.previousItem, "easyNavigationPreviousItem")
 
 	def disableEasyNavigation(self, toggleFlag=True):
 		try:
-			self.removeGestureBinding("kb:upArrow")
-			self.removeGestureBinding("kb:downArrow")
-			self.removeGestureBinding("kb:rightArrow")
-			self.removeGestureBinding("kb:leftArrow")
+			for key in easyNavigationRing.navKeys:
+				self.removeGestureBinding(key)
 		except:
 			pass
 		else:
@@ -197,6 +202,15 @@ class EasyNavigationPanel(SettingsPanel):
 		self.turnOnByDefaultCheckBox=helper.addItem(wx.CheckBox(self, label=_("Default active")))
 		self.turnOnByDefaultCheckBox.SetValue(easyNavigationRing.defaultActive)
 
+		self.navKeysModes = {
+		_("Right handed (vertical arrows)"): NavKeys("kb:rightArrow", "kb:leftArrow", "kb:downArrow", "kb:upArrow"),
+		_("Right handed (horizontal arrows)"): NavKeys("kb:downArrow", "kb:upArrow", "kb:rightArrow", "kb:leftArrow"),
+		_("Left hand (vertical AD-WS)"): NavKeys("kb:D", "kb:A", "kb:S", "kb:W"),
+		_("Left hand (horizontal WS-AD)"): NavKeys("kb:S", "kb:W", "kb:D", "kb:A")
+		}
+		self.navKeysSelection = helper.addLabeledControl(_("Set of navigation keys"), wx.Choice, choices=list(self.navKeysModes.keys()))
+		self.navKeysSelection.SetSelection(list(self.navKeysModes.values()).index(easyNavigationRing.navKeys))
+
 		self.ringCheckListBox = helper.addLabeledControl(_("Select items:"), CustomCheckListBox, choices=easyNavigationRing.getNames()[1:])
 		self.ringCheckListBox.SetCheckedStrings(easyNavigationRing.getEnabledItems())
 		self.ringCheckListBox.SetSelection(0)
@@ -205,4 +219,5 @@ class EasyNavigationPanel(SettingsPanel):
 		global easyNavigationRing 
 		easyNavigationRing.setEnabledItems(self.ringCheckListBox.GetCheckedStrings())
 		easyNavigationRing.defaultActive = self.turnOnByDefaultCheckBox.GetValue()
+		easyNavigationRing.navKeys = self.navKeysModes[list(self.navKeysModes.keys())[self.navKeysSelection.GetSelection()]]
 		easyNavigationRing.save()
