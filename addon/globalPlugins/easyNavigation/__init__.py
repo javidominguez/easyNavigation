@@ -69,13 +69,13 @@ class EasyNavigationRing():
 	def getEnabledItems(self):
 		enabled = []
 		for item in self.ring[1:]:
-			if item.status: enabled.append(_(item.name))
+			if item.status: enabled.append(self.ring[1:].index(item))
 		return enabled
 
-	def setEnabledItems(self, names=[]):
+	def setEnabledItems(self, checkedItems=[]):
 		newRing = [RingItem(True, _("Lines"), "script_moveByLine_back", "script_moveByLine_forward")]
 		for item in self.ring[1:]:
-			status = True if _(item.name) in names else False
+			status = True if self.ring[1:].index(item) in checkedItems else False
 			newRing.append(RingItem(status, item.name, item.previous, item.next))
 		self.ring = newRing
 
@@ -193,21 +193,28 @@ class EasyNavigationPanel(SettingsPanel):
 		self.turnOnByDefaultCheckBox.SetValue(easyNavigationRing.defaultActive)
 
 		self.navKeysModes = {
-		_("Right handed (vertical arrows)"): NavKeys("kb:rightArrow", "kb:leftArrow", "kb:downArrow", "kb:upArrow"),
-		_("Right handed (horizontal arrows)"): NavKeys("kb:downArrow", "kb:upArrow", "kb:rightArrow", "kb:leftArrow"),
-		_("Left hand (vertical AD-WS)"): NavKeys("kb:D", "kb:A", "kb:S", "kb:W"),
-		_("Left hand (horizontal WS-AD)"): NavKeys("kb:S", "kb:W", "kb:D", "kb:A")
+		_("Right hand vertical arrows"): NavKeys("kb:rightArrow", "kb:leftArrow", "kb:downArrow", "kb:upArrow"),
+		_("Right hand horizontal arrows"): NavKeys("kb:downArrow", "kb:upArrow", "kb:rightArrow", "kb:leftArrow"),
+		_("Right hand vertical numpad"): NavKeys("kb:numpad6", "kb:numpad4", "kb:numpad8", "kb:numpad2"),
+		_("Right hand horizontal numpad"): NavKeys("kb:numpad2", "kb:numpad8", "kb:numpad6", "kb:numpad4"),
+		_("Left hand vertical AD-WS"): NavKeys("kb:D", "kb:A", "kb:S", "kb:W"),
+		_("Left hand horizontal WS-AD"): NavKeys("kb:S", "kb:W", "kb:D", "kb:A"),
+		_("Left hand vertical SF-ED"): NavKeys("kb:F", "kb:S", "kb:D", "kb:E"),
+		_("Left hand horizontal ED-SF"): NavKeys("kb:D", "kb:E", "kb:F", "kb:S")
 		}
 		self.navKeysSelection = helper.addLabeledControl(_("Set of navigation keys"), wx.Choice, choices=list(self.navKeysModes.keys()))
-		self.navKeysSelection.SetSelection(list(self.navKeysModes.values()).index(easyNavigationRing.navKeys))
+		try:
+			self.navKeysSelection.SetSelection(list(self.navKeysModes.values()).index(easyNavigationRing.navKeys))
+		except ValueError:
+			self.navKeysSelection.SetSelection(0)
 
 		self.ringCheckListBox = helper.addLabeledControl(_("Select items:"), CustomCheckListBox, choices=easyNavigationRing.getNames()[1:])
-		self.ringCheckListBox.SetCheckedStrings(easyNavigationRing.getEnabledItems())
+		self.ringCheckListBox.SetCheckedItems(easyNavigationRing.getEnabledItems())
 		self.ringCheckListBox.SetSelection(0)
 
 	def onSave(self):
 		global easyNavigationRing 
-		easyNavigationRing.setEnabledItems(self.ringCheckListBox.GetCheckedStrings())
+		easyNavigationRing.setEnabledItems(self.ringCheckListBox.GetCheckedItems())
 		easyNavigationRing.defaultActive = self.turnOnByDefaultCheckBox.GetValue()
 		easyNavigationRing.navKeys = self.navKeysModes[list(self.navKeysModes.keys())[self.navKeysSelection.GetSelection()]]
 		easyNavigationRing.save()
