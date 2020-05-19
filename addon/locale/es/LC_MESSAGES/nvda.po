@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-17 12:45+0200\n"
-"PO-Revision-Date: 2020-05-17 12:47+0200\n"
+"POT-Creation-Date: 2020-05-19 10:21+0200\n"
+"PO-Revision-Date: 2020-05-19 10:26+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -18,113 +18,149 @@ msgstr ""
 "X-Generator: Poedit 1.8.8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: __init__.py:35 __init__.py:74
+#: __init__.py:44 __init__.py:88
 msgid "Lines"
 msgstr "Líneas"
 
-#: __init__.py:36
+#: __init__.py:45
 msgid "Headings"
 msgstr "Encabezados"
 
-#: __init__.py:37
+#: __init__.py:46
 msgid "Links"
 msgstr "Enlaces"
 
-#: __init__.py:38
+#: __init__.py:47
 msgid "Unvisited links"
 msgstr "Enlaces sin visitar"
 
-#: __init__.py:39
+#: __init__.py:48
 msgid "Visited links"
 msgstr "Enlaces visitados"
 
-#: __init__.py:40
+#: __init__.py:49
 msgid "Form fields"
 msgstr "Campos de formulario"
 
-#: __init__.py:41
+#: __init__.py:50
 msgid "Buttons"
 msgstr "Botones"
 
-#: __init__.py:42
+#: __init__.py:51
 msgid "Edit fields"
 msgstr "Campos de edición"
 
-#: __init__.py:43
+#: __init__.py:52
 msgid "Check boxes"
 msgstr "Casillas de verificación"
 
-#: __init__.py:44
+#: __init__.py:53
 msgid "Combo boxes"
 msgstr "Cuadros combinados"
 
-#: __init__.py:45
+#: __init__.py:54
 msgid "Radio buttons"
 msgstr "Botones de opción"
 
-#: __init__.py:46
+#: __init__.py:55
 msgid "Images"
 msgstr "Imágenes"
 
-#: __init__.py:47
+#: __init__.py:56
 msgid "Lists"
 msgstr "Listas"
 
-#: __init__.py:48
+#: __init__.py:57
 msgid "List items"
 msgstr "Elementos de lista"
 
-#: __init__.py:49
+#: __init__.py:58
 msgid "Tables"
 msgstr "Tablas"
 
-#: __init__.py:50
+#: __init__.py:59
 msgid "Frames"
 msgstr "Marcos"
 
-#: __init__.py:51
+#: __init__.py:60
 msgid "Articles"
 msgstr "Artículos"
 
-#: __init__.py:52
+#: __init__.py:61
 msgid "Landmarks"
 msgstr "Regiones"
 
-#: __init__.py:53
+#: __init__.py:62
 msgid "Separators"
 msgstr "Separadores"
 
-#: __init__.py:54
+#: __init__.py:63
 msgid "Quotes"
 msgstr "Citas"
 
-#: __init__.py:55
+#: __init__.py:64
 msgid "Objects"
 msgstr "Objetos"
 
-#: __init__.py:56
+#: __init__.py:65
 msgid "text blocks"
 msgstr "Bloques de texto"
 
-#: __init__.py:57
+#: __init__.py:66
 msgid "Searches"
 msgstr "Búsquedas"
 
-#: __init__.py:108 __init__.py:191
+#: __init__.py:122 __init__.py:205
 msgid "Easy Navigation"
 msgstr "Navegación Fácil"
 
-#: __init__.py:144
+#: __init__.py:158
 msgid "Toggles easy navigation mode."
 msgstr "Alterna el modo de navegación fácil."
 
-#: __init__.py:197
+#: __init__.py:213
 msgid "Default active"
 msgstr "Activo por defecto"
 
-#: __init__.py:200
-msgid "Select items:"
-msgstr "Selecciona elementos"
+#: __init__.py:219
+msgid "Right hand vertical arrows"
+msgstr "Mano derecha vertical flechas "
+
+#: __init__.py:220
+msgid "Right hand horizontal arrows"
+msgstr "Mano derecha horizontal flechas"
+
+#: __init__.py:221
+msgid "Right hand vertical numpad"
+msgstr "Mano derecha vertical teclado numérico"
+
+#: __init__.py:222
+msgid "Right hand horizontal numpad"
+msgstr "Mano derecha horizontal teclado numérico"
+
+#: __init__.py:223
+msgid "Left hand vertical AD-WS"
+msgstr "Mano izquierda vertical AD-WS"
+
+#: __init__.py:224
+msgid "Left hand horizontal WS-AD"
+msgstr "Mano izquierda horizontal WS-AD"
+
+#: __init__.py:225
+msgid "Left hand vertical SF-ED"
+msgstr "Mano izquierda vertical SF-ED"
+
+#: __init__.py:226
+msgid "Left hand horizontal ED-SF"
+msgstr "Mano izquierda horizontal ED-SF"
+
+#: __init__.py:230
+msgid "Set of navigation keys"
+msgstr "Conjunto de teclas de navegación"
+
+#: __init__.py:238
+msgid "Navigation items:"
+msgstr "Elementos de navegación"
 
 #: buildVars.py:17
 msgid "easyNavigation"
@@ -136,5 +172,8 @@ msgid ""
 "links, etc. so that you can do everything with one hand."
 msgstr ""
 "Sustituye los comandos de una sola tecla por las flechas para desplazarse "
-"por los encabezados, enlaces, etc., de modo que pueda hacerlo todo con "
-"una mano."
+"por los encabezados, enlaces, etc., de modo que pueda hacerlo todo con una "
+"mano."
+
+#~ msgid "Select items:"
+#~ msgstr "Selecciona elementos"
