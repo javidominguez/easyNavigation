@@ -19,7 +19,7 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description" : _("""Substitute single key commands for arrow keys to scroll through headings, links, etc. so that you can do everything with one hand."""),
 	# version
-	"addon_version" : "dev20200518",
+	"addon_version" : "dev20200519",
 	# Author(s)
 	"addon_author" : u"Javi Dominguez <fjavids@gmail.com>",
 	# URL for the add-on documentation support

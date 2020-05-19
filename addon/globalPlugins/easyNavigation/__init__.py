@@ -1,12 +1,13 @@
 #-coding: UTF-8 -*-
+"""
+Easy Navigation - NVDA addon
+This file is covered by the GNU General Public License.
+See the file COPYING.txt for more details.
+Copyright (C) 2020 Javi Dominguez <fjavids@gmail.com>
 
-# Easy Navigation - NVDA addon
-#This file is covered by the GNU General Public License.
-#See the file COPYING.txt for more details.
-#Copyright (C) 2020 Javi Dominguez <fjavids@gmail.com>
-
-# Substitute single key commands for arrow keys to scroll through headings, links, etc. so that you can do everything with one hand more comfortably and efficiently.
-# Specially designed for facilitates navigation through the elements of a document for people with mobility difficulties.
+Substitute single key commands for a set of four keys to scroll through headings, links, etc. so that you can do everything with one hand more comfortably and efficiently.
+Specially designed for facilitates navigation through the elements of a document for people with mobility difficulties.
+"""
 
 from gui import NVDASettingsDialog
 from gui import guiHelper 
@@ -29,6 +30,13 @@ RingItem = collections.namedtuple("RingItem", ("status", "name", "previous", "ne
 NavKeys = collections.namedtuple("NavKeys", ("nextOption", "previousOption", "nextItem", "previousItem"))
 
 class EasyNavigationRing():
+	"""Here the navigation ring is defined:
+	@ self.ring: (list of namedtuples): Each namedtuple contains this information about an option:
+		- status (enabled/disabled)
+		- name
+		- previous and next (name of the scripts that execute the movements.
+	@ self.defaultActive (boolean): Indicates if easy navigation mode will be activated by default when the addon is loaded.
+	@ self.navKeys (namedtuple): Contains the movement keys that are used when the ring is active."""
 
 	def __init__(self):
 		if self.load(): return 
@@ -61,18 +69,22 @@ class EasyNavigationRing():
 		self.navKeys = NavKeys("kb:rightArrow", "kb:leftArrow", "kb:downArrow", "kb:upArrow")
 
 	def getItem(self, index=0):
+		"""It receives as parameter an index (int) and returns the element of the ring (RingItem) corresponding to it."""
 		return self.ring[index]
 
 	def getNames(self):
+		"""Returns a list with the names of all the ring options."""
 		return [_(item.name) for item in self.ring]
 
 	def getEnabledItems(self):
+		"""Returns a list with the indexes of the enabled options."""
 		enabled = []
 		for item in self.ring[1:]:
 			if item.status: enabled.append(self.ring[1:].index(item))
 		return enabled
 
 	def setEnabledItems(self, checkedItems=[]):
+		"""Receive a list of indexes (int) and check enabled the corresponding options."""
 		newRing = [RingItem(True, _("Lines"), "script_moveByLine_back", "script_moveByLine_forward")]
 		for item in self.ring[1:]:
 			status = True if self.ring[1:].index(item) in checkedItems else False
@@ -80,6 +92,9 @@ class EasyNavigationRing():
 		self.ring = newRing
 
 	def save(self):
+		"""Save the current configuration in a file with pickle.
+		The format is a tuple with the following items:
+		(self.ring, self.defaultActive, self.navKeys)"""
 		try:
 			with open(os.path.join(globalVars.appArgs.configPath, "easyNavigation.pickle"), "wb") as f:
 				pickle.dump((self.ring, self.defaultActive, self.navKeys), f, 0)
@@ -87,6 +102,8 @@ class EasyNavigationRing():
 			pass
 
 	def load(self):
+		"""Load preferences from a file with pickle.
+		Returns True if load is succesfull, else returns False."""
 		try:
 			with open(os.path.join(globalVars.appArgs.configPath, "easyNavigation.pickle"), "rb") as f:
 				self.ring, self.defaultActive, self.navKeys = pickle.load(f)
@@ -183,32 +200,42 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		scriptHandler.executeScript(getattr(treeInterceptor, easyNavigationRing.getItem(self.ringIndex).previous), gesture)
 
 class EasyNavigationPanel(SettingsPanel):
+
+	#TRANSLATORS: Title of the preferences pane
 	title = _("Easy Navigation")
 
 	def makeSettings(self, settingsSizer):
 		global easyNavigationRing 
 		helper = guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
 
-		self.turnOnByDefaultCheckBox=helper.addItem(wx.CheckBox(self, label=_("Default active")))
+		self.turnOnByDefaultCheckBox=helper.addItem(wx.CheckBox(self, label=_(
+		#TRANSLATORS: Label of the checkbox that indicates whether to activate the easy navigation by default when loading the addon.
+		"Default active")))
 		self.turnOnByDefaultCheckBox.SetValue(easyNavigationRing.defaultActive)
 
 		self.navKeysModes = {
+		# Dictionary containing the sets of keys that can be selected by the user for navigation.
+		# Dictionary key will be the name shown in each option of the combo box in the preferences panel.
 		_("Right hand vertical arrows"): NavKeys("kb:rightArrow", "kb:leftArrow", "kb:downArrow", "kb:upArrow"),
 		_("Right hand horizontal arrows"): NavKeys("kb:downArrow", "kb:upArrow", "kb:rightArrow", "kb:leftArrow"),
-		_("Right hand vertical numpad"): NavKeys("kb:numpad6", "kb:numpad4", "kb:numpad8", "kb:numpad2"),
+		_("Right hand vertical numpad"): NavKeys("kb:numpad6", "kb:numpad4", "kb:numpad2", "kb:numpad8"),
 		_("Right hand horizontal numpad"): NavKeys("kb:numpad2", "kb:numpad8", "kb:numpad6", "kb:numpad4"),
 		_("Left hand vertical AD-WS"): NavKeys("kb:D", "kb:A", "kb:S", "kb:W"),
 		_("Left hand horizontal WS-AD"): NavKeys("kb:S", "kb:W", "kb:D", "kb:A"),
 		_("Left hand vertical SF-ED"): NavKeys("kb:F", "kb:S", "kb:D", "kb:E"),
 		_("Left hand horizontal ED-SF"): NavKeys("kb:D", "kb:E", "kb:F", "kb:S")
 		}
-		self.navKeysSelection = helper.addLabeledControl(_("Set of navigation keys"), wx.Choice, choices=list(self.navKeysModes.keys()))
+		self.navKeysSelection = helper.addLabeledControl(
+		#TRANSLATORS: Label of the combo box where the user chooses the set of navigation keys they want to use.
+		_("Set of navigation keys"), wx.Choice, choices=list(self.navKeysModes.keys()))
 		try:
 			self.navKeysSelection.SetSelection(list(self.navKeysModes.values()).index(easyNavigationRing.navKeys))
 		except ValueError:
 			self.navKeysSelection.SetSelection(0)
 
-		self.ringCheckListBox = helper.addLabeledControl(_("Select items:"), CustomCheckListBox, choices=easyNavigationRing.getNames()[1:])
+		self.ringCheckListBox = helper.addLabeledControl(
+		#TRANSLATORS: Label of the selectable list where users choose the navigation items they want to use.
+		_("Navigation items:"), CustomCheckListBox, choices=easyNavigationRing.getNames()[1:])
 		self.ringCheckListBox.SetCheckedItems(easyNavigationRing.getEnabledItems())
 		self.ringCheckListBox.SetSelection(0)
 
