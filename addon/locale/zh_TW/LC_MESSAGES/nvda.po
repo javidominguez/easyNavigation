@@ -7,128 +7,164 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-17 12:55+0200\n"
-"PO-Revision-Date: 2020-05-17 12:57+0200\n"
+"POT-Creation-Date: 2020-05-19 10:19+0200\n"
+"PO-Revision-Date: 2020-05-21 10:58+0800\n"
 "Last-Translator: 蔡宗豪 <surfer0627@gmail.com>\n"
 "Language-Team: \n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.6.10\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: __init__.py:35 __init__.py:74
+#: __init__.py:44 __init__.py:88
 msgid "Lines"
 msgstr "每行"
 
-#: __init__.py:36
+#: __init__.py:45
 msgid "Headings"
 msgstr "標題"
 
-#: __init__.py:37
+#: __init__.py:46
 msgid "Links"
 msgstr "連結"
 
-#: __init__.py:38
+#: __init__.py:47
 msgid "Unvisited links"
 msgstr "未到訪過的連結"
 
-#: __init__.py:39
+#: __init__.py:48
 msgid "Visited links"
 msgstr "已到訪過的連結"
 
-#: __init__.py:40
+#: __init__.py:49
 msgid "Form fields"
 msgstr "表單區"
 
-#: __init__.py:41
+#: __init__.py:50
 msgid "Buttons"
 msgstr "按鈕"
 
-#: __init__.py:42
+#: __init__.py:51
 msgid "Edit fields"
 msgstr "編輯區"
 
-#: __init__.py:43
+#: __init__.py:52
 msgid "Check boxes"
 msgstr "核取方塊"
 
-#: __init__.py:44
+#: __init__.py:53
 msgid "Combo boxes"
 msgstr "夏拉方塊"
 
-#: __init__.py:45
+#: __init__.py:54
 msgid "Radio buttons"
 msgstr "單選鈕"
 
-#: __init__.py:46
+#: __init__.py:55
 msgid "Images"
 msgstr "圖片"
 
-#: __init__.py:47
+#: __init__.py:56
 msgid "Lists"
 msgstr "清單"
 
-#: __init__.py:48
+#: __init__.py:57
 msgid "List items"
 msgstr "清單項目"
 
-#: __init__.py:49
+#: __init__.py:58
 msgid "Tables"
 msgstr "表格"
 
-#: __init__.py:50
+#: __init__.py:59
 msgid "Frames"
 msgstr "頁框"
 
-#: __init__.py:51
+#: __init__.py:60
 msgid "Articles"
 msgstr "文章"
 
-#: __init__.py:52
+#: __init__.py:61
 msgid "Landmarks"
 msgstr "地標"
 
-#: __init__.py:53
+#: __init__.py:62
 msgid "Separators"
-msgstr "隔線"
+msgstr "分隔線"
 
-#: __init__.py:54
+#: __init__.py:63
 msgid "Quotes"
 msgstr "引述"
 
-#: __init__.py:55
+#: __init__.py:64
 msgid "Objects"
 msgstr "嵌入式物件"
 
-#: __init__.py:56
+#: __init__.py:65
 msgid "text blocks"
 msgstr "文字區塊"
 
-#: __init__.py:57
+#: __init__.py:66
 msgid "Searches"
 msgstr "搜尋"
 
-#: __init__.py:108 __init__.py:191
+#: __init__.py:122 __init__.py:205
 msgid "Easy Navigation"
 msgstr "Easy Navigation"
 
-#: __init__.py:144
+#: __init__.py:158
 msgid "Toggles easy navigation mode."
 msgstr "開關 easy navigation"
 
-#: __init__.py:197
+#: __init__.py:213
 msgid "Default active"
 msgstr "當 NVDA 啟動時自動啟用 easyNavigation"
 
-#: __init__.py:200
-msgid "Select items:"
-msgstr "選取的項目:"
+#: __init__.py:219
+msgid "Right hand vertical arrows"
+msgstr "右邊，游標左、右選擇跳躍項目。"
+
+#: __init__.py:220
+msgid "Right hand horizontal arrows"
+msgstr "右邊，游標上、下選擇跳躍項目。"
+
+#: __init__.py:221
+msgid "Right hand vertical numpad"
+msgstr "右邊，數字鍵盤 4, 6 選擇跳躍項目。"
+
+#: __init__.py:222
+msgid "Right hand horizontal numpad"
+msgstr "右邊，數字鍵盤 8, 2 選擇跳躍項目。"
+
+#: __init__.py:223
+msgid "Left hand vertical AD-WS"
+msgstr "左邊，字母 a, d 選擇跳躍項目。"
+
+#: __init__.py:224
+msgid "Left hand horizontal WS-AD"
+msgstr "左邊，字母 w, s 選擇跳躍項目。"
+
+#: __init__.py:225
+msgid "Left hand vertical SF-ED"
+msgstr "左邊，字母 s, f 選擇跳躍項目。"
+
+#: __init__.py:226
+msgid "Left hand horizontal ED-SF"
+msgstr "左邊，字母 e, d 選擇跳躍項目。"
+
+#: __init__.py:230
+msgid "Set of navigation keys"
+msgstr "鍵盤設定:"
+
+#: __init__.py:238
+msgid "Navigation items:"
+msgstr "跳躍項目:"
 
 #: buildVars.py:17
 msgid "easyNavigation"
-msgstr ""
+msgstr "easyNavigation"
 
 #: buildVars.py:20
 msgid ""
@@ -136,3 +172,6 @@ msgid ""
 "links, etc. so that you can do everything with one hand."
 msgstr ""
 "更容易使用方向鍵，輕鬆跳轉到下一個標題、連結等。所有動作，適合單手操作。"
+
+#~ msgid "Select items:"
+#~ msgstr "選取的項目:"

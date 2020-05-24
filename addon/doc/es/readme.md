@@ -12,26 +12,26 @@ Sustituye los comandos de tecla única por  un conjunto de cuatro teclas para na
 En las preferencias, puede elegir uno de estos conjuntos de teclas para la navegación:
 
 * Mano derecha, flechas verticales
-* Las flechas derecha e izquierda seleccionan el elemento de navegación
-* Las flechas  arriba y  abajo saltan al elemento anterior o siguiente en el documento
+	* Las flechas derecha e izquierda seleccionan el elemento de navegación
+	* Las flechas  arriba y  abajo saltan al elemento anterior o siguiente en el documento
 * Mano derecha, flechas horizontales
-* Las flechas arriba y abajo seleccionan el elemento de navegación
-* Las flechas izquierda y derecha saltan al elemento anterior o siguiente en el documento
+	* Las flechas arriba y abajo seleccionan el elemento de navegación
+	* Las flechas izquierda y derecha saltan al elemento anterior o siguiente en el documento
 * Mano derecha, teclado numérico vertical
-*  6 y 4 del teclado numérico seleccionan el elemento de navegación
-* 8 y 2 saltan al elemento anterior o siguiente en el documento
+	*  6 y 4 del teclado numérico seleccionan el elemento de navegación
+	* 8 y 2 saltan al elemento anterior o siguiente en el documento
 * Mano derecha, teclado numérico horizontal
-* 8 y 2 del teclado numérico seleccionan el elemento de navegación
-* 4 y 6 saltan al elemento anterior o siguiente en el documento
+	* 8 y 2 del teclado numérico seleccionan el elemento de navegación
+	* 4 y 6 saltan al elemento anterior o siguiente en el documento
 * Mano izquierda, vertical AD-WS
-* A y D seleccionan el elemento de navegación
-* W y S saltan al elemento anterior o siguiente en el documento
+	* A y D seleccionan el elemento de navegación
+	* W y S saltan al elemento anterior o siguiente en el documento
 * Mano izquierda, horizontal WS-AD
-* W y D selecciona el elemento de navegación
-* A y D saltan al elemento anterior o siguiente en el documento
+	* W y D selecciona el elemento de navegación
+	* A y D saltan al elemento anterior o siguiente en el documento
 * Mano izquierda, SF-ED vertical
-* S y F seleccionan el elemento de navegación
-* E y D saltan al elemento anterior o siguiente en el documento
+	* S y F seleccionan el elemento de navegación
+	* E y D saltan al elemento anterior o siguiente en el documento
 * Mano izquierda, horizontal ED-SF
-* E y S seleccionan el elemento de navegación
-* S y F saltan al elemento anterior o siguiente en el documento
+	* E y S seleccionan el elemento de navegación
+	* S y F saltan al elemento anterior o siguiente en el documento
