@@ -1,4 +1,4 @@
-#-coding: UTF-8 -*-
+	#-coding: UTF-8 -*-
 """
 Easy Navigation - NVDA addon
 This file is covered by the GNU General Public License.
@@ -13,6 +13,7 @@ from gui import NVDASettingsDialog
 from gui import guiHelper 
 from gui.nvdaControls import CustomCheckListBox
 from gui.settingsDialogs import SettingsPanel
+from keyboardHandler import KeyboardInputGesture
 import addonHandler
 import api
 import appModuleHandler
@@ -67,7 +68,7 @@ class EasyNavigationRing():
 		self.itemsCount = len(self.ring)
 		self.defaultActive = False
 		self.navKeys = NavKeys("kb:rightArrow", "kb:leftArrow", "kb:downArrow", "kb:upArrow")
-
+		
 	def getItem(self, index=0):
 		"""It receives as parameter an index (int) and returns the element of the ring (RingItem) corresponding to it."""
 		return self.ring[index]
@@ -128,6 +129,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		NVDASettingsDialog.categoryClasses.append(EasyNavigationPanel)
 		self.flagEasyNavigation = easyNavigationRing.defaultActive
 		self.ringIndex = 0
+		self.oldGestureBindings = {}
 
 	def terminate(self):
 		NVDASettingsDialog.categoryClasses.remove(EasyNavigationPanel)
@@ -159,6 +161,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def enableEasyNavigation(self):
 		self.flagEasyNavigation = True
+		for k in easyNavigationRing.navKeys:
+			# Save binds (to restore them later) and remove then before binding the new ones to avoid keyboard conflicts.
+			script = KeyboardInputGesture.fromName(k.split(":")[1]).script
+			if script and self != script.__self__:
+				self.oldGestureBindings[k] = script
+				script.__self__.removeGestureBinding(k)
 		self.bindGesture(easyNavigationRing.navKeys.nextOption, "easyNavigationRingNextOption")
 		self.bindGesture(easyNavigationRing.navKeys.previousOption, "easyNavigationRingPreviousOption")
 		self.bindGesture(easyNavigationRing.navKeys.nextItem, "easyNavigationNextItem")
@@ -168,6 +176,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		try:
 			for key in easyNavigationRing.navKeys:
 				self.removeGestureBinding(key)
+				# Restore old bindings
+				try:
+					script = self.oldGestureBindings[key]
+				except KeyError:
+					pass
+				else:
+					if hasattr(script.__self__, script.__name__):
+						script.__self__.bindGesture(key, script.__name__[7:])
 		except:
 			pass
 		else:

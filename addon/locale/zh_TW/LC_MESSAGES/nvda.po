@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-19 10:19+0200\n"
-"PO-Revision-Date: 2020-05-21 10:58+0800\n"
+"PO-Revision-Date: 2020-05-26 23:06+0800\n"
 "Last-Translator: 蔡宗豪 <surfer0627@gmail.com>\n"
 "Language-Team: \n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 2.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: __init__.py:44 __init__.py:88
@@ -140,19 +140,19 @@ msgstr "右邊，數字鍵盤 8, 2 選擇跳躍項目。"
 
 #: __init__.py:223
 msgid "Left hand vertical AD-WS"
-msgstr "左邊，字母 a, d 選擇跳躍項目。"
+msgstr "左邊，字母 A, D 選擇跳躍項目。"
 
 #: __init__.py:224
 msgid "Left hand horizontal WS-AD"
-msgstr "左邊，字母 w, s 選擇跳躍項目。"
+msgstr "左邊，字母 W, S 選擇跳躍項目。"
 
 #: __init__.py:225
 msgid "Left hand vertical SF-ED"
-msgstr "左邊，字母 s, f 選擇跳躍項目。"
+msgstr "左邊，字母 S, F 選擇跳躍項目。"
 
 #: __init__.py:226
 msgid "Left hand horizontal ED-SF"
-msgstr "左邊，字母 e, d 選擇跳躍項目。"
+msgstr "左邊，字母 E, D 選擇跳躍項目。"
 
 #: __init__.py:230
 msgid "Set of navigation keys"
@@ -171,7 +171,8 @@ msgid ""
 "Substitute single key commands for arrow keys to scroll through headings, "
 "links, etc. so that you can do everything with one hand."
 msgstr ""
-"更容易使用方向鍵，輕鬆跳轉到下一個標題、連結等。所有動作，適合單手操作。"
+"用方向鍵代替單鍵導航，更容易跳轉到下一個標題、連結等。您可以用單手完成所有"
+"操作。"
 
 #~ msgid "Select items:"
 #~ msgstr "選取的項目:"
