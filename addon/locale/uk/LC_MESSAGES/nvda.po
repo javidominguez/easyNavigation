@@ -1,0 +1,166 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2023-02-26 15:23+0200\n"
+"PO-Revision-Date: 2023-02-26 15:32+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: uk_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ../../../globalPlugins\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: easyNavigation/__init__.py:45 easyNavigation/__init__.py:89
+msgid "Lines"
+msgstr "Рядки"
+
+#: easyNavigation/__init__.py:46
+msgid "Headings"
+msgstr "Заголовки"
+
+#: easyNavigation/__init__.py:47
+msgid "Links"
+msgstr "Посилання"
+
+#: easyNavigation/__init__.py:48
+msgid "Unvisited links"
+msgstr "Невідвідані посилання"
+
+#: easyNavigation/__init__.py:49
+msgid "Visited links"
+msgstr "Відвідані посилання"
+
+#: easyNavigation/__init__.py:50
+msgid "Form fields"
+msgstr "Поля форми"
+
+#: easyNavigation/__init__.py:51
+msgid "Buttons"
+msgstr "Кнопки"
+
+#: easyNavigation/__init__.py:52
+msgid "Edit fields"
+msgstr "Поля редагування"
+
+#: easyNavigation/__init__.py:53
+msgid "Check boxes"
+msgstr "Прапорці"
+
+#: easyNavigation/__init__.py:54
+msgid "Combo boxes"
+msgstr "Комбіновані списки"
+
+#: easyNavigation/__init__.py:55
+msgid "Radio buttons"
+msgstr "Радіокнопки"
+
+#: easyNavigation/__init__.py:56
+msgid "Images"
+msgstr "Графіка"
+
+#: easyNavigation/__init__.py:57
+msgid "Lists"
+msgstr "Списки"
+
+#: easyNavigation/__init__.py:58
+msgid "List items"
+msgstr "Елементи списку"
+
+#: easyNavigation/__init__.py:59
+msgid "Tables"
+msgstr "Таблиці"
+
+#: easyNavigation/__init__.py:60
+msgid "Frames"
+msgstr "Фрейми"
+
+#: easyNavigation/__init__.py:61
+msgid "Articles"
+msgstr "Статті"
+
+#: easyNavigation/__init__.py:62
+msgid "Landmarks"
+msgstr "Орієнтири"
+
+#: easyNavigation/__init__.py:63
+msgid "Separators"
+msgstr "Роздільники"
+
+#: easyNavigation/__init__.py:64
+msgid "Quotes"
+msgstr "Цитати"
+
+#: easyNavigation/__init__.py:65
+msgid "Objects"
+msgstr "Об’єкти"
+
+#: easyNavigation/__init__.py:66
+msgid "text blocks"
+msgstr "блоки тексту"
+
+#: easyNavigation/__init__.py:67
+msgid "Searches"
+msgstr "Пошуки"
+
+#. TRANSLATORS: Title of the preferences pane
+#: easyNavigation/__init__.py:123 easyNavigation/__init__.py:221
+msgid "Easy Navigation"
+msgstr "Легка навігація"
+
+#. TRANSLATORS: message shown in Input gestures dialog for this script
+#: easyNavigation/__init__.py:160
+msgid "Toggles easy navigation mode."
+msgstr "Перемикає режим легкої навігації."
+
+#. TRANSLATORS: Label of the checkbox that indicates whether to activate the easy navigation by default when loading the addon.
+#: easyNavigation/__init__.py:229
+msgid "Default active"
+msgstr "Початково активний"
+
+#: easyNavigation/__init__.py:235
+msgid "Right hand vertical arrows"
+msgstr "Права рука вертикальні стрілки"
+
+#: easyNavigation/__init__.py:236
+msgid "Right hand horizontal arrows"
+msgstr "Права рука горизонтальні стрілки"
+
+#: easyNavigation/__init__.py:237
+msgid "Right hand vertical numpad"
+msgstr "Права рука вертикально цифровий блок"
+
+#: easyNavigation/__init__.py:238
+msgid "Right hand horizontal numpad"
+msgstr "Права рука горизонтально цифровий блок"
+
+#: easyNavigation/__init__.py:239
+msgid "Left hand vertical AD-WS"
+msgstr "Ліва рука вертикально AD-WS"
+
+#: easyNavigation/__init__.py:240
+msgid "Left hand horizontal WS-AD"
+msgstr "Ліва рука горизонтально WS-AD"
+
+#: easyNavigation/__init__.py:241
+msgid "Left hand vertical SF-ED"
+msgstr "Ліва рука вертикально SF-ED"
+
+#: easyNavigation/__init__.py:242
+msgid "Left hand horizontal ED-SF"
+msgstr "Ліва рука горизонтально ED-SF"
+
+#. TRANSLATORS: Label of the combo box where the user chooses the set of navigation keys they want to use.
+#: easyNavigation/__init__.py:246
+msgid "Set of navigation keys"
+msgstr "Налаштуйте клавіші навігації"
+
+#. TRANSLATORS: Label of the selectable list where users choose the navigation items they want to use.
+#: easyNavigation/__init__.py:254
+msgid "Navigation items:"
+msgstr "Елементи навігації:"
