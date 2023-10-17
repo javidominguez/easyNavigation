@@ -19,7 +19,7 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description" : _("""Substitute single key commands for arrow keys to scroll through headings, links, etc. so that you can do everything with one hand."""),
 	# version
-	"addon_version" : "dev20230225",
+	"addon_version" : "2023.1.0",
 	# Author(s)
 	"addon_author" : u"Javi Dominguez <fjavids@gmail.com>",
 	# URL for the add-on documentation support
@@ -29,9 +29,9 @@ addon_info = {
 	# Minimum NVDA version supported (e.g. "2018.3.0")
 	"addon_minimumNVDAVersion" : "2019.3.0",
 	# Last NVDA version supported/tested (e.g. "2018.4.0", ideally more recent than minimum version)
-	"addon_lastTestedNVDAVersion" : "2023.1.0",
+	"addon_lastTestedNVDAVersion" : "2023.3.0",
 	# Add-on update channel (default is stable or None)
-	"addon_updateChannel" : None,
+	"addon_updateChannel" : "stable",
 }
 
 
@@ -39,7 +39,7 @@ import os.path
 
 # Define the python files that are the sources of your add-on.
 # You can use glob expressions here, they will be expanded.
-pythonSources = []
+pythonSources = [os.path.join("addon", "globalPlugins", "easyNavigation", "*.py"),]
 
 # Files that contain strings for translation. Usually your python sources
 i18nSources = pythonSources + ["buildVars.py"]
