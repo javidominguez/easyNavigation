@@ -19,7 +19,7 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description" : _("""Substitute single key commands for arrow keys to scroll through headings, links, etc. so that you can do everything with one hand."""),
 	# version
-	"addon_version" : "2024.0.1",
+	"addon_version" : "2024.1.0",
 	# Author(s)
 	"addon_author" : u"Javi Dominguez <fjavids@gmail.com>",
 	# URL for the add-on documentation support
@@ -31,7 +31,7 @@ addon_info = {
 	# Last NVDA version supported/tested (e.g. "2018.4.0", ideally more recent than minimum version)
 	"addon_lastTestedNVDAVersion" : "2024.1.0",
 	# Add-on update channel (default is stable or None)
-	"addon_updateChannel" : "dev",
+	"addon_updateChannel" : None,
 }
 
 
