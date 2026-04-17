@@ -1,2 +1,1 @@
-* Testing compatibility in NVDA 2025.1 API. So far everything is correct.
-* Updated manifest.
+* Updated manifest with version compatibility.
